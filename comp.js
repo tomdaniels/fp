@@ -40,3 +40,10 @@ const composition1 = pipe(
 );
 
 // console.log(composition1(3))
+
+module.exports = {
+  compose,
+  scream,
+  exclaim,
+  repeat,
+};
