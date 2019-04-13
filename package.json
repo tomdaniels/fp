@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/tomdaniels/fp/issues"
   },
-  "homepage": "https://github.com/tomdaniels/fp#readme"
+  "homepage": "https://github.com/tomdaniels/fp#readme",
+  "dependencies": {
+    "node-fetch": "^2.3.0"
+  }
 }
