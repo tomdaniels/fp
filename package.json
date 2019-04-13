@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tomdaniels/fp#readme",
   "dependencies": {
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.3.0",
+    "rxjs": "^6.4.0"
   }
 }
