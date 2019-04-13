@@ -28,3 +28,15 @@ const withExuberance = compose(
 );
 
 // console.log(withExuberance('nice socks, man'));
+
+const { pipe } = require('rxjs');
+
+const double = x => x * 2;
+const tripple = x => x * 3;
+
+const composition1 = pipe(
+  double,
+  tripple
+);
+
+// console.log(composition1(3))
