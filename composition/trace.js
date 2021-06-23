@@ -1,5 +1,5 @@
 /**
- * composition offers readable code, but can come at the cost of difficult debugging.
+ * composition offers readable code, but can come at the cost of difficult debugging. - Eric Elliot
  * a composable logger can splip into any composition  
  */
 
