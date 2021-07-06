@@ -23,7 +23,7 @@ const envokeWith = compose(
   trace('after: ')
 );
 
-envokeWith(5);
+// envokeWith(5);
 
 module.exports ={
   trace,
