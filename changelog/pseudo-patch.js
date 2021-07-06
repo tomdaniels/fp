@@ -11,6 +11,7 @@ const findPatch = array => array.pop(); // grab patch version ('2')
 const converToNumber = str => parseInt(str); // '2' into 2
 const increment = number => number + 1;
 
+// TODO remove trace calls
 const newPatchVersion = flow(
   splitParts,
   trace('after split: '),
@@ -35,7 +36,7 @@ if (versionToUse) {
   // the below fuinction doesn't seem to add the diff to the physcal file.. 
   // may need require('fs') to do it manually..  :thinking:
   set(JSON.stringify(pkg),
-    pkg.version, // path to amend
+    "version", // path to amend
     versionToUse, // new value
   );
 }
