@@ -1,8 +1,4 @@
-const { set, version } = require('edit-package-json');
-
-const { trace } = require('../composition/trace'); // curryable logger for comp debugging.
-const pkg = require('../package.json');
-const pkgVersion = pkg['version'];
+const fs = require('fs');
 
 const flow = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
 
@@ -11,34 +7,30 @@ const findPatch = array => array.pop(); // grab patch version ('2')
 const converToNumber = str => parseInt(str); // '2' into 2
 const increment = number => number + 1;
 
-// TODO remove trace calls
-const newPatchVersion = flow(
-  splitParts,
-  trace('after split: '),
-  findPatch,
-  trace('patch value: '),
-  converToNumber,
-  increment,
-  trace('after: '),
-);
+fs.readFile('./package.json', (err, data) => {
+  if (err) throw Error(`on read: ${err}`);
 
-const versionToUse = pkgVersion.replace(
-  splitParts(pkgVersion).pop(),
-  newPatchVersion(pkgVersion)
-);
-
-// console.log(JSON.stringify(pkg));
-
-if (versionToUse) {
-  console.log(versionToUse);
-
-  // How do we programatically edit the pkg.json??
-  // the below fuinction doesn't seem to add the diff to the physcal file.. 
-  // may need require('fs') to do it manually..  :thinking:
-  set(JSON.stringify(pkg),
-    "version", // path to amend
-    versionToUse, // new value
+  const pkg = JSON.parse(data);
+  const { version: pkgVersion } = pkg;
+  const newPatchVersion = flow(
+    splitParts,
+    findPatch,
+    converToNumber,
+    increment,
   );
-}
 
-return;
+  const versionToUse = pkgVersion.replace(
+    splitParts(pkgVersion).pop(),
+    newPatchVersion(pkgVersion)
+  );
+
+  console.log(versionToUse);
+  const packageJson = JSON.stringify({
+    ...pkg,
+    version: versionToUse,
+  }, null, 2);
+
+  fs.writeFileSync('./package.json', packageJson, (err) => {
+      if (err) throw `on write: ${err}`;
+  });
+});
