@@ -6,4 +6,4 @@ this can be very tedious, asking semantic-release to skip its core functionality
 
 
 I'm trying to get a simple node script that will grab the package.json['version'] and update it to a patch. 
-so the existing libraries like [`version-changelog`](https://github.com/jesstelford/version-changelog) to keepo the cahngelog in it's expected semver format.
+so the existing libraries like [`version-changelog`](https://github.com/jesstelford/version-changelog) to keepo the cahngelog in it's expected semver format. (seems a common theme for these libraries is relying on np or npm-release to have already changed this value.. I just can't come up with a way to do it with JS :thinking:)
