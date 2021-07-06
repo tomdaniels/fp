@@ -3,6 +3,8 @@ This changelog is manually managed as publishing is not a requirement for this l
 # Changelog
 
 ## [Unreleased][]
+
+## [1.0.8][] - 2021-07-06
 ### Fixed
 - all the worlds problems
 
@@ -127,6 +129,7 @@ This changelog is manually managed as publishing is not a requirement for this l
 * validate each card, log & skip any invalid records ([a017095](https://github.com/domain-transactions/sls-baseballcard-service/commit/a017095))
 * validate payload before posting to lendi ([164f2a9](https://github.com/domain-transactions/sls-baseballcard-service/commit/164f2a9))
 
-[Unreleased]: https://github.com/tomdaniels/fp/compare/v1.0.2...HEAD
+[Unreleased]: https://github.com/tomdaniels/fp/compare/v1.0.8...HEAD
+[1.0.8]: https://github.com/tomdaniels/fp/compare/v1.0.2...v1.0.8
 [1.0.2]: https://github.com/tomdaniels/fp/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/tomdaniels/fp/tree/v1.0.1
