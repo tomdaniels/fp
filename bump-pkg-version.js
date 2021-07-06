@@ -34,7 +34,7 @@ if (versionToUse) {
   console.log(versionToUse);
 
   exec(
-    `version-changelog CHANGELOG.md ${versionToUse} && changelog-verify CHANGELOG.md && git add CHANGELOG.md`,
+    `version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md`,
     (error, stdout, stderr) => {
       if (error) {
         console.log(`error: ${error.message}`);

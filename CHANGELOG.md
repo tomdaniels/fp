@@ -3,6 +3,8 @@ This changelog is manually managed as publishing is not a requirement for this l
 # Changelog
 
 ## [Unreleased][]
+### Fixed
+- all the worlds problems
 
 ## [1.0.2][] - 2021-07-06
 ### Added
