@@ -1,8 +1,8 @@
 const { set, version } = require('edit-package-json');
-const { trace } = require('../composition/trace'); // curryable logger for comp debugging.
-const pkg = require('./package.json');
-const pkgVersion = pkg['version'];
 
+const { trace } = require('../composition/trace'); // curryable logger for comp debugging.
+const pkg = require('../package.json');
+const pkgVersion = pkg['version'];
 
 const flow = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
 

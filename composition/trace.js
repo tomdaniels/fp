@@ -3,7 +3,7 @@
  * a composable logger can splip into any composition  
  */
 
-export const trace = label => value => {
+const trace = label => value => {
   console.log(label, value);
   return value;
 }
@@ -24,3 +24,7 @@ const envokeWith = compose(
 );
 
 envokeWith(5);
+
+module.exports ={
+  trace,
+};
