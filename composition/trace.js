@@ -3,7 +3,7 @@
  * a composable logger can splip into any composition  
  */
 
-const trace = label => value => {
+export const trace = label => value => {
   console.log(label, value);
   return value;
 }
