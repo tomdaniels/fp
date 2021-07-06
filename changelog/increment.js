@@ -31,7 +31,9 @@ const versionToUse = pkgVersion.replace(
 if (versionToUse) {
   console.log(versionToUse);
 
-  // How do we programatically edit the pkg.json :thinking:
+  // How do we programatically edit the pkg.json??
+  // the below fuinction doesn't seem to add the diff to the physcal file.. 
+  // may need require('fs') to do it manually..  :thinking:
   set(JSON.stringify(pkg),
     pkg.version, // path to amend
     versionToUse, // new value
