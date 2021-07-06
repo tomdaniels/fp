@@ -3,6 +3,8 @@ This changelog is manually managed as publishing is not a requirement for this l
 # Changelog
 
 ## [Unreleased][]
+### Added
+- some cool feature
 
 ## [1.0.1][] - 2021-07-06
 ### Added
