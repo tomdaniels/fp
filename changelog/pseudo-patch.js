@@ -7,6 +7,7 @@ const findPatch = array => array.pop(); // grab patch version ('2')
 const converToNumber = str => parseInt(str); // '2' into 2
 const increment = number => number + 1;
 
+
 fs.readFile('./package.json', (err, data) => {
   if (err) throw Error(`on read: ${err}`);
 
