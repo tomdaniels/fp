@@ -12,7 +12,6 @@ const run = file => {
     if (err) {
       throw err;
     }
-
     // print output from child processes
     node.on('data', stream);
   });
