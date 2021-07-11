@@ -27,7 +27,8 @@ const ignoreMatches = item => ![
   'README.md',
   'yarn.lock'
 ].includes(item);
-const choices = fs.readdirSync(process.cwd()).filter(ignoreMatches);
+const files = fs.readdirSync(process.cwd());
+const choices = files.filter(ignoreMatches);
 
 const questions = [
   {
