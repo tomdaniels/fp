@@ -4,6 +4,7 @@
   "description": "",
   "main": "currying.js",
   "scripts": {
+    "start:select": "node ./cli/start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "version": "version-changelog ./changelog/CHANGELOG.md && changelog-verify ./changelog/CHANGELOG.md && git add ./changelog/CHANGELOG.md"
   },
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/tomdaniels/fp#readme",
   "dependencies": {
+    "inquirer": "^8.1.1",
     "node-fetch": "^2.3.0",
     "rxjs": "^6.4.0"
   },
