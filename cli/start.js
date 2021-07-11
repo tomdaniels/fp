@@ -18,7 +18,7 @@ const run = file => {
   });
 };
 
-const ignoreMatches = list => item => ![
+const ignoreMatches = item => ![
   '.git',
   'cli',
   'node_modules',
@@ -26,11 +26,8 @@ const ignoreMatches = list => item => ![
   '.gitignore',
   'README.md',
   'yarn.lock'
-].includes(item) && list.push(item);
-let choices = [];
-
-const files = fs.readdirSync(process.cwd());
-files.forEach(ignoreMatches(choices));
+].includes(item);
+const choices = fs.readdirSync(process.cwd()).filter(ignoreMatches);
 
 const questions = [
   {
