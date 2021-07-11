@@ -5,8 +5,8 @@ const fs = require('fs');
 
 const stream = (buffer) => console.log(Buffer.from(buffer).toString());
 const run = file => {
-  const node = spawn('node', [`${file}`], { stdio: 'inherit' });
   const filePath = path.join(process.cwd(), `./${file}`);
+  const node = spawn('node', [file.toString()], { stdio: 'inherit' });
 
   exec(`node ${filePath}`, (err, stdout, stderr) => {
     if (err) {
