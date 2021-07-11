@@ -27,9 +27,9 @@ const ignoreMatches = item => ![
   'README.md',
   'yarn.lock'
 ].includes(item);
+
 const files = fs.readdirSync(process.cwd());
 const choices = files.filter(ignoreMatches);
-
 const questions = [
   {
     type: 'list',
@@ -38,6 +38,7 @@ const questions = [
     choices,
   },
 ];
+
 inquirer
   .prompt(questions)
   .then((answers) => {
